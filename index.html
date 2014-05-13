@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Videocaptureplus-phonegap-plugin : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Videocaptureplus-phonegap-plugin</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/droidguy04/VideoCapturePlus-PhoneGap-Plugin">View on GitHub</a>
+
+          <h1 id="project_title">Videocaptureplus-phonegap-plugin</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/droidguy04/VideoCapturePlus-PhoneGap-Plugin/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/droidguy04/VideoCapturePlus-PhoneGap-Plugin/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="videocaptureplus-phonegap-plugin" class="anchor" href="#videocaptureplus-phonegap-plugin"><span class="octicon octicon-link"></span></a>VideoCapturePlus PhoneGap plugin</h1>
+
+<p>by <a href="http://www.x-services.nl/blog">Eddy Verbruggen</a></p>
+
+<h2>
+<a name="0-index" class="anchor" href="#0-index"><span class="octicon octicon-link"></span></a>0. Index</h2>
+
+<ol>
+<li><a href="https://github.com/EddyVerbruggen/VideoCapturePlus-PhoneGap-Plugin#1-description">Description</a></li>
+<li><a href="https://github.com/EddyVerbruggen/VideoCapturePlus-PhoneGap-Plugin#2-screenshots">Screenshots</a></li>
+<li>
+<a href="https://github.com/EddyVerbruggen/VideoCapturePlus-PhoneGap-Plugin#3-installation">Installation</a>
+
+<ol>
+<li><a href="https://github.com/EddyVerbruggen/VideoCapturePlus-PhoneGap-Plugin#automatically-cli--plugman">Automatically (CLI / Plugman)</a></li>
+<li><a href="https://github.com/EddyVerbruggen/VideoCapturePlus-PhoneGap-Plugin#manually">Manually</a></li>
+<li><a href="https://github.com/EddyVerbruggen/VideoCapturePlus-PhoneGap-Plugin#phonegap-build">PhoneGap Build</a></li>
+</ol>
+</li>
+<li><a href="https://github.com/EddyVerbruggen/VideoCapturePlus-PhoneGap-Plugin#4-usage">Usage</a></li>
+<li><a href="https://github.com/EddyVerbruggen/VideoCapturePlus-PhoneGap-Plugin#5-credits">Credits</a></li>
+<li><a href="https://github.com/EddyVerbruggen/VideoCapturePlus-PhoneGap-Plugin#6-license">License</a></li>
+</ol><h2>
+<a name="1-description" class="anchor" href="#1-description"><span class="octicon octicon-link"></span></a>1. Description</h2>
+
+<ul>
+<li>This plugin offers some useful extras on top of the <a href="http://docs.phonegap.com/en/3.3.0/cordova_media_capture_capture.md.html#capture.captureVideo">default PhoneGap Video Capture capabilities</a>:
+
+<ul>
+<li>HD recording.</li>
+<li>Starting with the front camera.</li>
+<li>A custom overlay (currently iOS only).</li>
+</ul>
+</li>
+<li>For PhoneGap 3.0.0 and up.</li>
+<li>Works on the same Android and iOS versions as the <a href="http://docs.phonegap.com/en/3.3.0/cordova_media_capture_capture.md.html#capture.captureVideo">original plugin</a>.</li>
+<li>Compatible with <a href="https://github.com/apache/cordova-plugman">Cordova Plugman</a>.</li>
+<li>Pending official support at <a href="https://build.phonegap.com/plugins">PhoneGap Build</a>.</li>
+</ul><h2>
+<a name="2-screenshots" class="anchor" href="#2-screenshots"><span class="octicon octicon-link"></span></a>2. Screenshots</h2>
+
+<p>Before recording, portrait mode (the 'Please rotate' text is part of the <a href="demo/img/cameraoverlays/overlay-iPhone-portrait.png">overlay png file</a>):</p>
+
+<p><img src="screenshots/screenshot-before-recording-portrait.png" alt="ScreenShot"></p>
+
+<p>During recording, landscape mode:</p>
+
+<p><img src="screenshots/screenshot-during-recording-landscape.png" alt="ScreenShot"></p>
+
+<p>Reviewing the recording, portrait mode:</p>
+
+<p><img src="screenshots/screenshot-reviewing-recording-landscape.png" alt="ScreenShot"></p>
+
+<p>After recording you can extract the metadata, <a href="demo">see the demo folder for the code of this example</a>:</p>
+
+<p><img src="screenshots/screenshot-after-recording.png" alt="ScreenShot"></p>
+
+<h2>
+<a name="3-installation" class="anchor" href="#3-installation"><span class="octicon octicon-link"></span></a>3. Installation</h2>
+
+<p>IMPORTANT NOTE for plugin version &lt; 1.2: if you currently use the org.apache.cordova.media-capture plugin, remove it (otherwise your build will fail).</p>
+
+<h3>
+<a name="automatically-cli--plugman" class="anchor" href="#automatically-cli--plugman"><span class="octicon octicon-link"></span></a>Automatically (CLI / Plugman)</h3>
+
+<p>VideoCapturePlus is compatible with <a href="https://github.com/apache/cordova-plugman">Cordova Plugman</a>, compatible with <a href="http://docs.phonegap.com/en/3.0.0/guide_cli_index.md.html#The%20Command-line%20Interface_add_features">PhoneGap 3.0 CLI</a>, here's how it works with the CLI:</p>
+
+<pre><code>$ phonegap local plugin add https://github.com/EddyVerbruggen/VideoCapturePlus-PhoneGap-Plugin.git
+</code></pre>
+
+<p>or</p>
+
+<pre><code>$ cordova plugin add https://github.com/EddyVerbruggen/VideoCapturePlus-PhoneGap-Plugin.git
+</code></pre>
+
+<p>run this command afterwards:</p>
+
+<pre><code>$ cordova prepare
+</code></pre>
+
+<p>VideoCapturePlus.js is brought in automatically. There is no need to change or add anything in your html.</p>
+
+<h3>
+<a name="manually" class="anchor" href="#manually"><span class="octicon octicon-link"></span></a>Manually</h3>
+
+<p>1. Add the following xml to your <code>config.xml</code> in the root directory of your <code>www</code> folder:</p>
+
+<div class="highlight highlight-xml"><pre><span class="c">&lt;!-- for iOS --&gt;</span>
+<span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"VideoCapturePlus"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"ios-package"</span> <span class="na">value=</span><span class="s">"VideoCapturePlus"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/feature&gt;</span>
+</pre></div>
+
+<div class="highlight highlight-xml"><pre><span class="c">&lt;!-- for Android --&gt;</span>
+<span class="nt">&lt;feature</span> <span class="na">name=</span><span class="s">"VideoCapturePlus"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">"android-package"</span> <span class="na">value=</span><span class="s">"nl.xservices.plugins.videocaptureplus.VideoCapturePlus"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/feature&gt;</span>
+</pre></div>
+
+<p>For Android, add these to your <code>AndroidManifest.xml</code>:</p>
+
+<div class="highlight highlight-xml"><pre><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.RECORD_VIDEO"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.WRITE_EXTERNAL_STORAGE"</span><span class="nt">/&gt;</span>
+</pre></div>
+
+<p>For iOS, you'll need to add the <code>CoreGraphics.framework</code> and <code>MobileCoreServices.framework</code> to your project.</p>
+
+<p>2. Grab a copy of VideoCapturePlus.js, add it to your project and reference it in <code>index.html</code>:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"js/VideoCapturePlus.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>3. Download the source files for iOS and/or Android and copy them to your project.</p>
+
+<p>iOS: Copy <code>VideoCapturePlus.h</code> and <code>VideoCapturePlus.m</code> to <code>platforms/ios/&lt;ProjectName&gt;/Plugins</code></p>
+
+<p>Android: Copy <code>VideoCapturePlus.java</code> and <code>FileHelper.java</code> to <code>platforms/android/src/nl/xservices/plugins/videocaptureplus</code> (create the folders).</p>
+
+<h3>
+<a name="phonegap-build" class="anchor" href="#phonegap-build"><span class="octicon octicon-link"></span></a>PhoneGap Build</h3>
+
+<p>VideoCapturePlus is pending approval at <a href="http://build.phonegap.com/plugins">PhoneGap Build</a>. Once it's approved, just add the following xml to your <code>config.xml</code> to always use the latest version of this plugin:</p>
+
+<div class="highlight highlight-xml"><pre><span class="nt">&lt;gap:plugin</span> <span class="na">name=</span><span class="s">"nl.x-services.plugins.videocaptureplus"</span> <span class="nt">/&gt;</span>
+</pre></div>
+
+<p>or to use this exact version:</p>
+
+<div class="highlight highlight-xml"><pre><span class="nt">&lt;gap:plugin</span> <span class="na">name=</span><span class="s">"nl.x-services.plugins.videocaptureplus"</span> <span class="na">version=</span><span class="s">"1.0"</span> <span class="nt">/&gt;</span>
+</pre></div>
+
+<p>VideoCapturePlus.js is brought in automatically. There is no need to change or add anything in your html.</p>
+
+<h2>
+<a name="4-usage" class="anchor" href="#4-usage"><span class="octicon octicon-link"></span></a>4. Usage</h2>
+
+<p>See the <a href="demo">demo project</a> for all details, but the most interesting part is this:</p>
+
+<div class="highlight highlight-javascript"><pre>  <span class="nb">window</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">videocaptureplus</span><span class="p">.</span><span class="nx">captureVideo</span><span class="p">(</span>
+      <span class="nx">captureSuccess</span><span class="p">,</span> <span class="c1">// your success callback</span>
+      <span class="nx">captureError</span><span class="p">,</span>   <span class="c1">// your error callback</span>
+      <span class="p">{</span>
+        <span class="nx">limit</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// the nr of videos to record, default 1 (on iOS always 1)</span>
+        <span class="nx">duration</span><span class="o">:</span> <span class="nx">duration</span><span class="p">,</span> <span class="c1">// max duration in seconds, default 0, which is 'forever'</span>
+        <span class="nx">highquality</span><span class="o">:</span> <span class="nx">highquality</span><span class="p">,</span> <span class="c1">// set to true to override the default low quality setting</span>
+        <span class="nx">frontcamera</span><span class="o">:</span> <span class="nx">frontcamera</span><span class="p">,</span> <span class="c1">// set to true to override the default backfacing camera setting</span>
+        <span class="c1">// you'll want to sniff the useragent/device and pass the best overlay based on that.. assuming iphone here</span>
+        <span class="nx">portraitOverlay</span><span class="o">:</span> <span class="s1">'www/img/cameraoverlays/overlay-iPhone-portrait.png'</span><span class="p">,</span> <span class="c1">// put the png in your www folder</span>
+        <span class="nx">landscapeOverlay</span><span class="o">:</span> <span class="s1">'www/img/cameraoverlays/overlay-iPhone-landscape.png'</span> <span class="c1">// not passing an overlay means no image is shown for the landscape orientation</span>
+      <span class="p">}</span>
+  <span class="p">);</span>
+</pre></div>
+
+<h2>
+<a name="5-credits" class="anchor" href="#5-credits"><span class="octicon octicon-link"></span></a>5. CREDITS</h2>
+
+<p>Cordova, for <a href="https://github.com/apache/cordova-plugin-media-capture">the original plugin repository</a>, which is the basis for this one.</p>
+
+<h2>
+<a name="6-license" class="anchor" href="#6-license"><span class="octicon octicon-link"></span></a>6. License</h2>
+
+<p><a href="http://www.opensource.org/licenses/mit-license.html">The MIT License (MIT)</a></p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Videocaptureplus-phonegap-plugin maintained by <a href="https://github.com/droidguy04">droidguy04</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
